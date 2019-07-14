@@ -6,7 +6,7 @@
 
   <groupId>fr.marcwrobel</groupId>
   <artifactId>gcli</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>GCLI</name>
@@ -21,7 +21,7 @@
     <project.java.version>1.8</project.java.version>
     <project.maven.version>3.5.0</project.maven.version>
     <project.scm.url>https://github.com/marcwrobel/gcli</project.scm.url>
-    <project.scm.connection>git@github.com:marcwrobel/gcli.git</project.scm.connection>
+    <project.scm.connection>scm:git:git@github.com:marcwrobel/gcli.git</project.scm.connection>
 
     <!-- dependencies -->
     <commons-cli.version>1.2</commons-cli.version>
