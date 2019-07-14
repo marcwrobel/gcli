@@ -19,7 +19,7 @@
     <project.scm.name>${project.artifactId}</project.scm.name>
     <project.encoding>UTF-8</project.encoding>
     <project.java.version>1.8</project.java.version>
-    <project.maven.version>3.6.1</project.maven.version>
+    <project.maven.version>3.5.0</project.maven.version>
     <project.scm.url>https://github.com/marcwrobel/gcli</project.scm.url>
     <project.scm.connection>git@github.com:marcwrobel/gcli.git</project.scm.connection>
 
