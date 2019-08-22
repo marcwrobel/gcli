@@ -4,7 +4,7 @@
 
   <groupId>fr.marcwrobel</groupId>
   <artifactId>gcli</artifactId>
-  <version>0.0.2-SNAPSHOT</version>
+  <version>0.0.2</version>
   <packaging>jar</packaging>
 
   <name>GCLI</name>
@@ -75,7 +75,7 @@
     <url>${project.scm.url}</url>
     <connection>${project.scm.connection}</connection>
     <developerConnection>${project.scm.connection}</developerConnection>
-    <tag>HEAD</tag>
+    <tag>gcli-0.0.2</tag>
   </scm>
 
   <issueManagement>
