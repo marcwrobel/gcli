@@ -20,6 +20,13 @@
     <project.maven.version>3.5.0</project.maven.version>
     <project.scm.url>https://github.com/marcwrobel/gcli</project.scm.url>
     <project.scm.connection>scm:git:git@github.com:marcwrobel/gcli.git</project.scm.connection>
+    <project.issue.name>GitHub Issues</project.issue.name>
+    <project.issue.url>${project.scm.url}</project.issue.url>
+    <project.dist.id>github</project.dist.id>
+    <project.dist.name>GitHub Packages</project.dist.name>
+    <project.dist.url>https://maven.pkg.github.com/marcwrobel/gcli</project.dist.url>
+    <project.ci.name>GitHub Actions</project.ci.name>
+    <project.ci.url>${project.scm.url}</project.ci.url>
 
     <!-- dependencies -->
     <commons-cli.version>1.2</commons-cli.version>
@@ -67,7 +74,7 @@
     <developer>
       <id>marcwrobel</id>
       <name>Marc Wrobel</name>
-      <url>http://marcwrobel.fr/</url>
+      <url>https://www.marcwrobel.fr/</url>
     </developer>
   </developers>
 
@@ -79,21 +86,21 @@
   </scm>
 
   <issueManagement>
-    <system>GitHub Issues</system>
-    <url>https://github.com/marcwrobel/gcli/issues</url>
+    <system>${project.issue.name}</system>
+    <url>${project.issue.url}</url>
   </issueManagement>
 
   <distributionManagement>
     <repository>
-      <id>bintray-marcwrobel-maven</id>
-      <name>marcwrobel-maven</name>
-      <url>https://api.bintray.com/maven/marcwrobel/maven/${project.artifactId}/;publish=1</url>
+      <id>${project.dist.id}</id>
+      <name>${project.dist.name}</name>
+      <url>${project.dist.url}</url>
     </repository>
   </distributionManagement>
 
   <ciManagement>
-    <system>jenkins</system>
-    <url>https://buildhive.cloudbees.com/job/marcwrobel/job/jbanking/</url>
+    <system>${project.ci.name}</system>
+    <url>${project.ci.url}</url>
   </ciManagement>
 
   <dependencies>
