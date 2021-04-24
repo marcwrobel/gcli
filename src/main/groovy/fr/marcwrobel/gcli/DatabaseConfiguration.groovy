@@ -1,12 +1,15 @@
 package fr.marcwrobel.gcli
 
 import groovy.sql.Sql
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 
 /**
  * Basic configuration for a groovy script with database capabilities.
  */
 class DatabaseConfiguration extends LoggingConfiguration {
 
+  private static final Logger LOG = LoggerFactory.getLogger(DatabaseConfiguration.class)
   private static final String POSTGRES_DRIVER = 'org.postgresql.Driver'
 
   private final File passFile = new File(userHome, '.dbpass')
@@ -14,7 +17,7 @@ class DatabaseConfiguration extends LoggingConfiguration {
 
   DatabaseConfiguration(CliTexts texts) {
     super(texts)
-    cli.dc longOpt: 'db-connection', args: 1, 'Database connection string (default : a postgresql connection URL based on db-name)'
+    cli.dc longOpt: 'db-connection', args: 1, 'Database connection string (default : a postgresql connection URL for localhost:5432 based on db-name)'
     cli.du longOpt: 'db-user', args: 1, 'Database user name (default : the current user name)'
     cli.dd longOpt: 'db-driver', args: 1, 'Database driver (default : org.postgresql.Driver)'
     cli.db longOpt: 'db-name', args: 1, 'Database name (default : the current user name)'
@@ -26,6 +29,7 @@ class DatabaseConfiguration extends LoggingConfiguration {
     def dbPassword = databasePassword
     def dbDriver = databaseDriver
 
+    LOG.debug('Connecting to database using URL={}, user={}, driver={}', dbUrl, dbUser, dbDriver)
     Integer returnValue = 0
     Sql.withInstance(dbUrl, dbUser, dbPassword, dbDriver) { Sql sql ->
       sql.withTransaction {
@@ -59,7 +63,7 @@ class DatabaseConfiguration extends LoggingConfiguration {
   final String getDatabaseUrl() {
     String dbUrl = options.dc
 
-    if (!dbUrl) {
+    if (!options.dc) {
       def dbName = databaseName
       def dbUser = databaseUser
       def dbHost = retrieveValueFromPgPass(dbUser, 0, 'localhost')
@@ -71,7 +75,7 @@ class DatabaseConfiguration extends LoggingConfiguration {
   }
 
   final String getDatabasePassword() {
-    if (databaseDriver == POSTGRES_DRIVER) {
+    if (POSTGRES_DRIVER == databaseDriver) {
       def dbUser = databaseUser
       return retrieveValueFromPgPass(dbUser, 4, dbUser)
     }
