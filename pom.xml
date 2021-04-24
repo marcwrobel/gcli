@@ -33,7 +33,7 @@
     <groovy.version>2.4.21</groovy.version>
     <junit.version>4.13.2</junit.version>
     <logback.version>1.2.3</logback.version>
-    <postgresql.version>42.2.5</postgresql.version>
+    <postgresql.version>42.2.20</postgresql.version>
 
     <!-- plugins -->
     <git-commit-id-plugin.version>2.2.6</git-commit-id-plugin.version>
