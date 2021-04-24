@@ -8,8 +8,6 @@ import static java.time.LocalDateTime.now
 /**
  * Basic configuration for a groovy script with database capabilities and period iterator
  * capabilities.
- *
- * The following script can be build with it
  */
 class PeriodIteratorAndDatabaseConfiguration extends DatabaseConfiguration {
 
