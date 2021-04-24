@@ -22,11 +22,11 @@ import fr.marcwrobel.gcli.ScriptCliTexts
 import groovy.sql.Sql
 import groovy.util.logging.Slf4j
 
-@Grab(group = 'fr.marcwrobel', module = 'gcli', version = '0.0.2')
-@Grab(group = 'ch.qos.logback', module = 'logback-classic', version = '1.1.7')
+@Grab(group = 'fr.marcwrobel', module = 'gcli', version = '0.0.5')
+@Grab(group = 'ch.qos.logback', module = 'logback-classic', version = '1.2.3')
 
 @GrabConfig(systemClassLoader = true)
-@Grab(group = 'org.postgresql', module = 'postgresql', version = '42.2.6')
+@Grab(group = 'org.postgresql', module = 'postgresql', version = '42.2.20')
 
 final class CommandConfiguration extends DatabaseConfiguration {
   CommandConfiguration(Class<?> scriptClass) {
