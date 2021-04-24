@@ -12,7 +12,7 @@
   <version>0.0.6-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>GCLI</name>
+  <name>${project.artifactId}</name>
   <description>Easier scripting with Groovy</description>
   <url>${this.scm.url}</url>
   <inceptionYear>2019</inceptionYear>
