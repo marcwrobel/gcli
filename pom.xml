@@ -9,7 +9,7 @@
   </parent>
 
   <artifactId>gcli</artifactId>
-  <version>0.0.5</version>
+  <version>0.0.6-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>GCLI</name>
@@ -167,8 +167,4 @@
       </plugin>
     </plugins>
   </build>
-
-  <scm>
-    <tag>v0.0.5</tag>
-  </scm>
 </project>
