@@ -130,6 +130,7 @@
       <plugin>
         <groupId>com.cosium.code</groupId>
         <artifactId>git-code-format-maven-plugin</artifactId>
+        <version>2.7</version>
       </plugin>
 
       <plugin>
