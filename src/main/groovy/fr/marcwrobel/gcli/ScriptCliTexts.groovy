@@ -1,5 +1,8 @@
 package fr.marcwrobel.gcli
 
+/**
+ * A basic implementation of {@link CliTexts} for Groovy scripts.
+ */
 class ScriptCliTexts implements CliTexts {
 
   private final SimpleCliTexts texts

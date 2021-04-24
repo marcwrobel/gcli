@@ -1,5 +1,8 @@
 package fr.marcwrobel.gcli
 
+/**
+ * A basic implementation of {@link CliTexts}.
+ */
 class SimpleCliTexts implements CliTexts {
 
   private final String cliName
