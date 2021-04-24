@@ -29,6 +29,7 @@
 
     <!-- plugins -->
     <gmavenplus-plugin.version>1.7.1</gmavenplus-plugin.version>
+    <groovydoc-maven-plugin.version>2.1</groovydoc-maven-plugin.version>
   </properties>
 
   <dependencyManagement>
@@ -108,6 +109,21 @@
       <plugin>
         <groupId>org.codehaus.gmavenplus</groupId>
         <artifactId>gmavenplus-plugin</artifactId>
+      </plugin>
+
+      <plugin>
+        <groupId>com.bluetrainsoftware.maven</groupId>
+        <artifactId>groovydoc-maven-plugin</artifactId>
+        <version>${groovydoc-maven-plugin.version}</version>
+        <executions>
+          <execution>
+            <id>attach-docs</id>
+            <phase>package</phase>
+            <goals>
+              <goal>attach-docs</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
 
       <plugin>

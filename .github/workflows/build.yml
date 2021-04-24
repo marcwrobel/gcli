@@ -15,4 +15,4 @@ jobs:
         with:
           java-version: ${{ matrix.java }}
       - name: Build
-        run: mvn -B verify javadoc:jar
+        run: mvn -B verify
