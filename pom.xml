@@ -1,32 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>fr.marcwrobel</groupId>
+  <parent>
+    <groupId>fr.marcwrobel</groupId>
+    <artifactId>parent</artifactId>
+    <version>2.3.2</version>
+  </parent>
+
   <artifactId>gcli</artifactId>
   <version>0.0.5-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>GCLI</name>
   <description>Easier scripting with Groovy</description>
-  <url>${project.scm.url}</url>
+  <url>${this.scm.url}</url>
   <inceptionYear>2019</inceptionYear>
 
   <properties>
-    <!-- project -->
-    <project.scm.name>${project.artifactId}</project.scm.name>
-    <project.encoding>UTF-8</project.encoding>
-    <project.java.version>1.8</project.java.version>
-    <project.maven.version>3.5.0</project.maven.version>
-    <project.scm.url>https://github.com/marcwrobel/gcli</project.scm.url>
-    <project.scm.connection>scm:git:git@github.com:marcwrobel/gcli.git</project.scm.connection>
-    <project.issue.name>GitHub Issues</project.issue.name>
-    <project.issue.url>${project.scm.url}</project.issue.url>
-    <project.dist.id>github</project.dist.id>
-    <project.dist.name>GitHub Packages</project.dist.name>
-    <project.dist.url>https://maven.pkg.github.com/marcwrobel/gcli</project.dist.url>
-    <project.ci.name>GitHub Actions</project.ci.name>
-    <project.ci.url>${project.scm.url}</project.ci.url>
+    <this.java.version>1.8</this.java.version>
 
     <!-- dependencies -->
     <groovy.version>2.5.14</groovy.version>
@@ -35,72 +28,8 @@
     <postgresql.version>42.2.20</postgresql.version>
 
     <!-- plugins -->
-    <git-commit-id-plugin.version>2.2.6</git-commit-id-plugin.version>
     <gmavenplus-plugin.version>1.7.1</gmavenplus-plugin.version>
-    <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
-    <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
-    <maven-dependency-plugin.version>3.1.1</maven-dependency-plugin.version>
-    <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
-    <maven-enforcer-plugin.version>3.0.0-M2</maven-enforcer-plugin.version>
-    <maven-failsafe-plugin.version>2.22.2</maven-failsafe-plugin.version>
-    <maven-git-code-format.version>1.24</maven-git-code-format.version>
-    <maven-help-plugin.version>3.1.1</maven-help-plugin.version>
-    <maven-install-plugin.version>2.5.2</maven-install-plugin.version>
-    <maven-invoker-plugin.version>3.1.0</maven-invoker-plugin.version>
-    <maven-jar-plugin.version>3.1.2</maven-jar-plugin.version>
-    <maven-javadoc-plugin.version>3.0.1</maven-javadoc-plugin.version>
-    <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
-    <maven-site-plugin.version>3.7.1</maven-site-plugin.version>
-    <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
-    <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
-
-    <!-- default configuration -->
-    <maven.compiler.source>${project.java.version}</maven.compiler.source>
-    <maven.compiler.target>${project.java.version}</maven.compiler.target>
-    <project.build.sourceEncoding>${project.encoding}</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>${project.encoding}</project.reporting.outputEncoding>
   </properties>
-
-  <licenses>
-    <license>
-      <name>The Apache Software License, Version 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
-
-  <developers>
-    <developer>
-      <id>marcwrobel</id>
-      <name>Marc Wrobel</name>
-      <url>https://www.marcwrobel.fr/</url>
-    </developer>
-  </developers>
-
-  <scm>
-    <url>${project.scm.url}</url>
-    <connection>${project.scm.connection}</connection>
-    <developerConnection>${project.scm.connection}</developerConnection>
-    <tag>HEAD</tag>
-  </scm>
-
-  <issueManagement>
-    <system>${project.issue.name}</system>
-    <url>${project.issue.url}</url>
-  </issueManagement>
-
-  <distributionManagement>
-    <repository>
-      <id>${project.dist.id}</id>
-      <name>${project.dist.name}</name>
-      <url>${project.dist.url}</url>
-    </repository>
-  </distributionManagement>
-
-  <ciManagement>
-    <system>${project.ci.name}</system>
-    <url>${project.ci.url}</url>
-  </ciManagement>
 
   <dependencyManagement>
     <dependencies>
@@ -151,31 +80,8 @@
   </dependencies>
 
   <build>
-    <defaultGoal>clean install</defaultGoal>
-
     <pluginManagement>
       <plugins>
-        <plugin>
-          <groupId>pl.project13.maven</groupId>
-          <artifactId>git-commit-id-plugin</artifactId>
-          <version>${git-commit-id-plugin.version}</version>
-          <executions>
-            <execution>
-              <goals>
-                <goal>revision</goal>
-              </goals>
-            </execution>
-          </executions>
-          <configuration>
-            <verbose>false</verbose>
-            <dateFormat>yyyy-MM-dd'T'HH:mm:ssZ</dateFormat>
-            <generateGitPropertiesFile>true</generateGitPropertiesFile>
-            <generateGitPropertiesFilename>
-              ${project.build.outputDirectory}/git.properties
-            </generateGitPropertiesFilename>
-          </configuration>
-        </plugin>
-
         <plugin>
           <groupId>org.codehaus.gmavenplus</groupId>
           <artifactId>gmavenplus-plugin</artifactId>
@@ -195,134 +101,10 @@
             </execution>
           </executions>
         </plugin>
-
-        <plugin>
-          <artifactId>maven-clean-plugin</artifactId>
-          <version>${maven-clean-plugin.version}</version>
-        </plugin>
-
-        <plugin>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>${maven-compiler-plugin.version}</version>
-          <configuration>
-            <parameters>true</parameters>
-          </configuration>
-        </plugin>
-
-        <plugin>
-          <artifactId>maven-deploy-plugin</artifactId>
-          <version>${maven-deploy-plugin.version}</version>
-        </plugin>
-
-        <plugin>
-          <artifactId>maven-dependency-plugin</artifactId>
-          <version>${maven-dependency-plugin.version}</version>
-        </plugin>
-
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-enforcer-plugin</artifactId>
-          <version>${maven-enforcer-plugin.version}</version>
-          <executions>
-            <execution>
-              <id>enforce-maven</id>
-              <goals>
-                <goal>enforce</goal>
-              </goals>
-              <configuration>
-                <rules>
-                  <requireMavenVersion>
-                    <version>[${project.maven.version},)</version>
-                  </requireMavenVersion>
-                  <requireJavaVersion>
-                    <version>[${project.java.version},)</version>
-                  </requireJavaVersion>
-                  <banDuplicatePomDependencyVersions />
-                </rules>
-              </configuration>
-            </execution>
-          </executions>
-        </plugin>
-
-        <plugin>
-          <artifactId>maven-failsafe-plugin</artifactId>
-          <version>${maven-failsafe-plugin.version}</version>
-        </plugin>
-
-        <plugin>
-          <groupId>com.cosium.code</groupId>
-          <artifactId>maven-git-code-format</artifactId>
-          <version>${maven-git-code-format.version}</version>
-          <executions>
-            <execution>
-              <id>install-formatter-hook</id>
-              <goals>
-                <goal>install-hooks</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
-
-        <plugin>
-          <artifactId>maven-install-plugin</artifactId>
-          <version>${maven-install-plugin.version}</version>
-        </plugin>
-
-        <plugin>
-          <artifactId>maven-invoker-plugin</artifactId>
-          <version>${maven-invoker-plugin.version}</version>
-        </plugin>
-
-        <plugin>
-          <artifactId>maven-help-plugin</artifactId>
-          <version>${maven-help-plugin.version}</version>
-        </plugin>
-
-        <plugin>
-          <artifactId>maven-jar-plugin</artifactId>
-          <version>${maven-jar-plugin.version}</version>
-          <configuration>
-            <archive>
-              <manifest>
-                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-              </manifest>
-            </archive>
-          </configuration>
-        </plugin>
-
-        <plugin>
-          <artifactId>maven-javadoc-plugin</artifactId>
-          <version>${maven-javadoc-plugin.version}</version>
-        </plugin>
-
-        <plugin>
-          <artifactId>maven-resources-plugin</artifactId>
-          <version>${maven-resources-plugin.version}</version>
-        </plugin>
-
-        <plugin>
-          <artifactId>maven-site-plugin</artifactId>
-          <version>${maven-site-plugin.version}</version>
-        </plugin>
-
-        <plugin>
-          <artifactId>maven-source-plugin</artifactId>
-          <version>${maven-source-plugin.version}</version>
-        </plugin>
-
-        <plugin>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>${maven-surefire-plugin.version}</version>
-        </plugin>
       </plugins>
     </pluginManagement>
 
     <plugins>
-      <plugin>
-        <groupId>pl.project13.maven</groupId>
-        <artifactId>git-commit-id-plugin</artifactId>
-      </plugin>
-
       <plugin>
         <groupId>org.codehaus.gmavenplus</groupId>
         <artifactId>gmavenplus-plugin</artifactId>
@@ -335,7 +117,43 @@
 
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-failsafe-plugin</artifactId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifestEntries>
+              <Automatic-Module-Name>fr.marcwrobel.gcli</Automatic-Module-Name>
+            </manifestEntries>
+          </archive>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>com.cosium.code</groupId>
+        <artifactId>git-code-format-maven-plugin</artifactId>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>flatten-maven-plugin</artifactId>
+        <configuration>
+          <flattenMode>oss</flattenMode>
+        </configuration>
+        <executions>
+          <execution>
+            <id>flatten</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>flatten</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>flatten.clean</id>
+            <phase>clean</phase>
+            <goals>
+              <goal>clean</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
