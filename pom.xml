@@ -24,7 +24,7 @@
     <groovy.version>2.5.14</groovy.version>
     <junit.version>4.13.2</junit.version>
     <logback.version>1.2.3</logback.version>
-    <postgresql.version>42.2.20</postgresql.version>
+    <postgresql.version>42.2.25</postgresql.version>
 
     <!-- plugins -->
     <gmavenplus-plugin.version>1.7.1</gmavenplus-plugin.version>
