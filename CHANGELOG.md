@@ -19,5 +19,6 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Internal
 
 - Add a project's changelog.
+- Migrate to junit 5 (#21).
 
 ### Thanks

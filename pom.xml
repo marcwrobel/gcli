@@ -22,7 +22,6 @@
 
     <!-- dependencies -->
     <groovy.version>2.5.16</groovy.version>
-    <junit.version>4.13.2</junit.version>
     <logback.version>1.2.3</logback.version>
     <postgresql.version>42.2.20</postgresql.version>
 
@@ -72,9 +71,15 @@
     </dependency>
 
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>${junit.version}</version>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>${junit-jupiter.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-params</artifactId>
+      <version>${junit-jupiter.version}</version>
       <scope>test</scope>
     </dependency>
   </dependencies>

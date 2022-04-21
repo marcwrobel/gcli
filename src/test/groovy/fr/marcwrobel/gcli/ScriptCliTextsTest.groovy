@@ -1,8 +1,8 @@
 package fr.marcwrobel.gcli
 
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
-import static org.junit.Assert.assertEquals
+import static org.junit.jupiter.api.Assertions.*
 
 class ScriptCliTextsTest {
 
@@ -13,14 +13,15 @@ class ScriptCliTextsTest {
   private static final String ARG2 = 'FILE'
   private static final List<String> ARGS = [ARG1, ARG2]
 
-  @Test(expected = NullPointerException.class)
+  @Test
   void scriptClassIsMandatory() {
-    new ScriptCliTexts(null)
+    assertThrows(NullPointerException.class, { -> new ScriptCliTexts(null) })
   }
 
   @Test
   void generateUsage() {
     ScriptCliTexts texts = new ScriptCliTexts(this.class, ARGS, FOOTER)
+
     assertEquals(SCRIPT_NAME, texts.name())
     assertEquals(ARGS, texts.args())
     assertEquals(FOOTER, texts.footer())

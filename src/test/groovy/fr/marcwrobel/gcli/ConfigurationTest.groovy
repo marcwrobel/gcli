@@ -1,9 +1,8 @@
 package fr.marcwrobel.gcli
 
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
-import static org.junit.Assert.assertFalse
-import static org.junit.Assert.assertTrue
+import static org.junit.jupiter.api.Assertions.*
 
 class ConfigurationTest {
 
@@ -12,7 +11,9 @@ class ConfigurationTest {
   @Test
   void noArgTest() {
     Configuration configuration = new Configuration(TEXTS)
+
     configuration.parse([] as String[])
+
     assertFalse(configuration.showHelp)
     configuration.usage()
   }
