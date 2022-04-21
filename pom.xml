@@ -22,7 +22,6 @@
 
     <!-- dependencies -->
     <groovy.version>2.5.16</groovy.version>
-    <postgresql.version>42.2.20</postgresql.version>
 
     <!-- plugins -->
     <gmavenplus-plugin.version>1.7.1</gmavenplus-plugin.version>
