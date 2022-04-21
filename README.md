@@ -5,7 +5,8 @@
 [![SonarCloud Bugs](https://sonarcloud.io/api/project_badges/measure?project=fr.marcwrobel:gcli&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=fr.marcwrobel:gcli)
 [![Maven Central](https://img.shields.io/maven-central/v/fr.marcwrobel/gcli.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22fr.marcwrobel%22%20AND%20a:%22gcli%22)
 
-GCLI aims to make scripting with Groovy easier by providing opinionated utilities related to common concerns like logging or database accesses.
+GCLI aims to make scripting with Groovy easier by providing opinionated utilities related to common concerns like
+logging or database accesses.
 
 ## Requirements
 
@@ -15,6 +16,7 @@ and [Groovy 2.5](https://groovy-lang.org/install.html) or later.
 ## Use it !
 
 Here is a sample script that makes use of logging and database access capabilities :
+
 ```groovy
 #!/usr/bin/env groovy
 
@@ -23,10 +25,10 @@ import groovy.sql.Sql
 import groovy.util.logging.Slf4j
 
 @Grab(group = 'fr.marcwrobel', module = 'gcli', version = '0.0.5')
-@Grab(group = 'ch.qos.logback', module = 'logback-classic', version = '1.2.3')
+@Grab(group = 'ch.qos.logback', module = 'logback-classic', version = '1.2.11')
 
 @GrabConfig(systemClassLoader = true)
-@Grab(group = 'org.postgresql', module = 'postgresql', version = '42.2.20')
+@Grab(group = 'org.postgresql', module = 'postgresql', version = '42.3.3')
 
 final class CommandConfiguration extends DatabaseConfiguration {
   CommandConfiguration(Class<?> scriptClass) {
