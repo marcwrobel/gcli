@@ -11,6 +11,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Use parent’s versions for logback (#22).
 - Use parent’s versions for postgresql (#23).
 - Upgrade to groovy [2.5.16](http://groovy-lang.org/changelogs/changelog-2.5.16.html) (#20).
+- Upgrade to gmavenplus-plugin [1.13.1](https://github.com/groovy/GMavenPlus/releases/tag/1.13.1) (#24).
 
 ### Fixed
 

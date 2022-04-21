@@ -24,7 +24,7 @@
     <groovy.version>2.5.16</groovy.version>
 
     <!-- plugins -->
-    <gmavenplus-plugin.version>1.7.1</gmavenplus-plugin.version>
+    <gmavenplus-plugin.version>1.13.1</gmavenplus-plugin.version>
     <groovydoc-maven-plugin.version>2.1</groovydoc-maven-plugin.version>
   </properties>
 
