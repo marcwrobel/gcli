@@ -7,6 +7,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 
+- Upgrade parent to [2.6.0](https://github.com/marcwrobel/parent/releases/tag/v2.6.0) (#25).
 - Upgrade to groovy [2.5.16](http://groovy-lang.org/changelogs/changelog-2.5.16.html) (#20).
 
 ### Fixed
