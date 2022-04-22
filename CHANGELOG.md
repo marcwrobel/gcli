@@ -19,7 +19,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Internal
 
 - Add a project's changelog.
-- Upgrade parent to [2.6.0](https://github.com/marcwrobel/parent/releases/tag/v2.6.0) (#25).
+- Upgrade parent to [2.6.1](https://github.com/marcwrobel/parent/releases/tag/v2.6.1) (#26).
 - Use parent’s versions for logback (#22).
 - Use parent’s versions for postgresql (#23).
 - Migrate to junit 5 (#21).
